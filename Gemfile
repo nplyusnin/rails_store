@@ -52,6 +52,9 @@ group :development, :test do
 
   # RSpec as main test framework [https://github.com/rspec/rspec-rails]
   gem "rspec-rails"
+
+  # Fixtures replacement [https://github.com/thoughtbot/factory_bot_rails]
+  gem "factory_bot_rails"
 end
 
 group :development do
