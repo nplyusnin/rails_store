@@ -37,4 +37,4 @@
 /docker-compose.yml
 
 # Ignore local config files
-/config/databases.yml
+/config/database.yml
