@@ -7,6 +7,7 @@ describe "Admin::Products#destroy" do
     visit url_for([ :admin, product, only_path: true ])
 
     click_on "Destroy"
+    accept_alert
 
     expect(page).not_to have_content(product.title)
     expect(page.current_path).to eq(url_for([ :admin, :products, only_path: true ]))

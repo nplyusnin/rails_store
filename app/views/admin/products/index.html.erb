@@ -2,15 +2,30 @@
 
 <% content_for :title, "Products" %>
 
-<h1>Products</h1>
+<%= page_header "Products" %>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", [:admin, product] %>
-    </p>
-  <% end %>
-</div>
+<table class="table is-bordered is-striped is-fullwidth is-align-middle">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
 
-<%= link_to "New product", new_admin_product_path %>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td>
+          <%= button_show "Show", [:admin, product] %>
+          <%= button_edit "Edit", edit_admin_product_path(product) %>
+          <%= button_delete "Destroy", [:admin, product] %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_new "New product", new_admin_product_path %>
