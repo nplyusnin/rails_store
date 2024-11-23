@@ -1,0 +1,5 @@
+<%= page_header "Products" %>
+
+<% @products.each do |product| %>
+  <%= link_to product.title, product %>
+<% end %>
